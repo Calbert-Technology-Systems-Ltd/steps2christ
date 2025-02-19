@@ -16,7 +16,7 @@
             <ul class="breadcrumbs">
                 <li><a href="{{route('front.index')}}">{{__('Home')}}</a> </li>
                 <li class="separator"></li>
-                <li>{{__('Shop')}}</li>
+                <li>{{__('Books')}}</li>
               </ul>
           </div>
       </div>

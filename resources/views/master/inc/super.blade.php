@@ -44,7 +44,7 @@
             <ul class="nav nav-collapse">
                 <li>
                     <a class="sub-link" href="{{ route('back.brand.index') }}">
-                        <span class="sub-item">{{ __('Brands') }}</span>
+                        <span class="sub-item">{{ __('Authors') }}</span>
                     </a>
                 </li>
                 <li>

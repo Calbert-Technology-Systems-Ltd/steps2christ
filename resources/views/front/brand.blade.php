@@ -4,7 +4,7 @@
 <meta name="description" content="{{$setting->meta_description}}">
 @endsection
 @section('title')
-    {{__('Brand')}}
+    {{__('Authors')}}
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@
                 <ul class="breadcrumbs">
                     <li><a href="{{(route('front.index'))}}">{{__('Home')}}</a> </li>
                     <li class="separator">&nbsp;</li>
-                    <li>{{__('Brand')}}</li>
+                    <li>{{__('Authors')}}</li>
                   </ul>
             </div>
         </div>

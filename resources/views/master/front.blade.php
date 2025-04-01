@@ -89,45 +89,45 @@ body_theme4
     <div class="menu-top-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="t-m-s-a">
-                        <a class="track-order-link" href="{{route('front.order.track')}}"><i class="icon-map-pin"></i>{{ __('Track Order') }}</a>
-                        <a class="track-order-link compare-mobile d-lg-none" href="{{route('fornt.compare.index')}}">{{ __('Compare') }}</a>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="right-area">
+{{--                <div class="col-md-4">--}}
+{{--                    <div class="t-m-s-a">--}}
+{{--                        <a class="track-order-link" href="{{route('front.order.track')}}"><i class="icon-map-pin"></i>{{ __('Track Order') }}</a>--}}
+{{--                        <a class="track-order-link compare-mobile d-lg-none" href="{{route('fornt.compare.index')}}">{{ __('Compare') }}</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-8">--}}
+{{--                    <div class="right-area">--}}
 
-                        <a class="track-order-link wishlist-mobile d-inline-block d-lg-none" href="{{route('user.wishlist.index')}}"><i class="icon-heart"></i>{{ __('Wishlist') }}</a>
-                        
-                        <div class="t-h-dropdown ">
-                            <a class="main-link" href="#">{{ __('Currency') }}<i class="icon-chevron-down"></i></a>
-                            <div class="t-h-dropdown-menu">
-                                @foreach (DB::table('currencies')->get() as $currency)
-                                    <a class="{{Session::get('currency') == $currency->id ? 'active' : ($currency->is_default == 1 && !Session::has('currency') ? 'active' : '')}}" href="{{route('front.currency.setup',$currency->id)}}"><i class="icon-chevron-right pr-2"></i>{{$currency->name}}</a>
-                                @endforeach
-                            </div>
-                        </div>
+{{--                        <a class="track-order-link wishlist-mobile d-inline-block d-lg-none" href="{{route('user.wishlist.index')}}"><i class="icon-heart"></i>{{ __('Wishlist') }}</a>--}}
+{{--                        --}}
+{{--                        <div class="t-h-dropdown ">--}}
+{{--                            <a class="main-link" href="#">{{ __('Currency') }}<i class="icon-chevron-down"></i></a>--}}
+{{--                            <div class="t-h-dropdown-menu">--}}
+{{--                                @foreach (DB::table('currencies')->get() as $currency)--}}
+{{--                                    <a class="{{Session::get('currency') == $currency->id ? 'active' : ($currency->is_default == 1 && !Session::has('currency') ? 'active' : '')}}" href="{{route('front.currency.setup',$currency->id)}}"><i class="icon-chevron-right pr-2"></i>{{$currency->name}}</a>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="login-register ">
-                            @if(!Auth::user())
-                            <a class="track-order-link mr-0" href="{{route('user.login')}}">
-                            {{__('Login/Register')}}
-                            </a>
-                            @else
-                            <div class="t-h-dropdown">
-                                <div class="main-link">
-                                    <i class="icon-user pr-2"></i> <span class="text-label">{{Auth::user()->first_name}}</span>
-                                </div>
-                                <div class="t-h-dropdown-menu">
-                                    <a href="{{route('user.dashboard')}}"><i class="icon-chevron-right pr-2"></i>{{ __('Dashboard') }}</a>
-                                    <a href="{{route('user.logout')}}"><i class="icon-chevron-right pr-2"></i>{{ __('Logout') }}</a>
-                                </div>
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
+{{--                        <div class="login-register ">--}}
+{{--                            @if(!Auth::user())--}}
+{{--                            <a class="track-order-link mr-0" href="{{route('user.login')}}">--}}
+{{--                            {{__('Login/Register')}}--}}
+{{--                            </a>--}}
+{{--                            @else--}}
+{{--                            <div class="t-h-dropdown">--}}
+{{--                                <div class="main-link">--}}
+{{--                                    <i class="icon-user pr-2"></i> <span class="text-label">{{Auth::user()->first_name}}</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="t-h-dropdown-menu">--}}
+{{--                                    <a href="{{route('user.dashboard')}}"><i class="icon-chevron-right pr-2"></i>{{ __('Dashboard') }}</a>--}}
+{{--                                    <a href="{{route('user.logout')}}"><i class="icon-chevron-right pr-2"></i>{{ __('Logout') }}</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @endif--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
@@ -164,42 +164,42 @@ body_theme4
                             <span class="d-block d-lg-none close-m-serch"><i class="icon-x"></i></span>
                         </div>
                         <!-- Toolbar-->
-                        <div class="toolbar d-flex">
+{{--                        <div class="toolbar d-flex">--}}
 
-                        <div class="toolbar-item close-m-serch visible-on-mobile"><a href="#">
-                            <div>
-                                <i class="icon-search"></i>
-                            </div>
-                            </a>
-                        </div>
-                        <div class="toolbar-item visible-on-mobile mobile-menu-toggle"><a href="#">
-                            <div><i class="icon-menu"></i><span class="text-label">{{__('Menu')}}</span></div>
-                            </a>
-                        </div>
+{{--                        <div class="toolbar-item close-m-serch visible-on-mobile"><a href="#">--}}
+{{--                            <div>--}}
+{{--                                <i class="icon-search"></i>--}}
+{{--                            </div>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="toolbar-item visible-on-mobile mobile-menu-toggle"><a href="#">--}}
+{{--                            <div><i class="icon-menu"></i><span class="text-label">{{__('Menu')}}</span></div>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
 
-                        <div class="toolbar-item hidden-on-mobile"><a href="{{route('fornt.compare.index')}}">
-                            <div><span class="compare-icon"><i class="icon-repeat"></i><span class="count-label compare_count">{{Session::has('compare') ? count(Session::get('compare')) : '0'}}</span></span><span class="text-label">{{ __('Compare') }}</span></div>
-                            </a>
-                        </div>
-                        @if(Auth::check())
-                        <div class="toolbar-item hidden-on-mobile"><a href="{{route('user.wishlist.index')}}">
-                            <div><span class="compare-icon"><i class="icon-heart"></i><span class="count-label wishlist_count">{{Auth::user()->wishlists->count()}}</span></span><span class="text-label">{{__('Wishlist')}}</span></div>
-                            </a>
-                        </div>
-                        @else
-                        <div class="toolbar-item hidden-on-mobile"><a href="{{route('user.wishlist.index')}}">
-                          <div><span class="compare-icon"><i class="icon-heart"></i></span><span class="text-label">{{__('Wishlist')}}</span></div>
-                          </a>
-                      </div>
-                        @endif
-                        <div class="toolbar-item"><a href="{{route('front.cart')}}">
-                            <div><span class="cart-icon"><i class="icon-shopping-cart"></i><span class="count-label cart_count">{{Session::has('cart') ? count(Session::get('cart')) : '0'}} </span></span><span class="text-label">{{ __('Cart') }}</span></div>
-                            </a>
-                            <div class="toolbar-dropdown cart-dropdown widget-cart  cart_view_header" id="header_cart_load" data-target="{{route('front.header.cart')}}">
-                            @include('includes.header_cart')
-                            </div>
-                        </div>
-                        </div>
+{{--                        <div class="toolbar-item hidden-on-mobile"><a href="{{route('fornt.compare.index')}}">--}}
+{{--                            <div><span class="compare-icon"><i class="icon-repeat"></i><span class="count-label compare_count">{{Session::has('compare') ? count(Session::get('compare')) : '0'}}</span></span><span class="text-label">{{ __('Compare') }}</span></div>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        @if(Auth::check())--}}
+{{--                        <div class="toolbar-item hidden-on-mobile"><a href="{{route('user.wishlist.index')}}">--}}
+{{--                            <div><span class="compare-icon"><i class="icon-heart"></i><span class="count-label wishlist_count">{{Auth::user()->wishlists->count()}}</span></span><span class="text-label">{{__('Wishlist')}}</span></div>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        @else--}}
+{{--                        <div class="toolbar-item hidden-on-mobile"><a href="{{route('user.wishlist.index')}}">--}}
+{{--                          <div><span class="compare-icon"><i class="icon-heart"></i></span><span class="text-label">{{__('Wishlist')}}</span></div>--}}
+{{--                          </a>--}}
+{{--                      </div>--}}
+{{--                        @endif--}}
+{{--                        <div class="toolbar-item"><a href="{{route('front.cart')}}">--}}
+{{--                            <div><span class="cart-icon"><i class="icon-shopping-cart"></i><span class="count-label cart_count">{{Session::has('cart') ? count(Session::get('cart')) : '0'}} </span></span><span class="text-label">{{ __('Cart') }}</span></div>--}}
+{{--                            </a>--}}
+{{--                            <div class="toolbar-dropdown cart-dropdown widget-cart  cart_view_header" id="header_cart_load" data-target="{{route('front.header.cart')}}">--}}
+{{--                            @include('includes.header_cart')--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        </div>--}}
 
                         <!-- Mobile Menu-->
                         <div class="mobile-menu">
@@ -274,9 +274,9 @@ body_theme4
   <div class="navbar">
         <div class="container">
             <div class="row g-3 w-100">
-                <div class="col-lg-3">
-                    @include('includes.categories')
-                </div>
+{{--                <div class="col-lg-3">--}}
+{{--                    @include('includes.categories')--}}
+{{--                </div>--}}
                 <div class="col-lg-9 d-flex justify-content-between">
                     <div class="nav-inner">
                         <nav class="site-menu">
@@ -295,17 +295,17 @@ body_theme4
                                 <li class="{{ request()->routeIs('front.blog*') ? 'active' : '' }}"><a href="{{route('front.blog')}}">{{__('Blog')}}</a></li>
                                 @endif
 
-                                <li class="t-h-dropdown">
-                                    <a class="main-link" href="#">{{__('Pages')}} <i class="icon-chevron-down"></i></a>
-                                    <div class="t-h-dropdown-menu">
-                                        @if ($setting->is_faq == 1)
-                                        <a class="{{ request()->routeIs('front.faq*') ? 'active' : '' }}" href="{{route('front.faq')}}"><i class="icon-chevron-right pr-2"></i>{{__('Faq')}}</a>
-                                        @endif
-                                        @foreach (DB::table('pages')->wherePos(0)->orwhere('pos',2)->get() as $page)
-                                        <a class="{{request()->url() == route('front.page',$page->slug) ? 'active' : ''}} " href="{{route('front.page',$page->slug)}}"><i class="icon-chevron-right pr-2"></i>{{$page->title}}</a>
-                                        @endforeach
-                                    </div>
-                                </li>
+{{--                                <li class="t-h-dropdown">--}}
+{{--                                    <a class="main-link" href="#">{{__('Pages')}} <i class="icon-chevron-down"></i></a>--}}
+{{--                                    <div class="t-h-dropdown-menu">--}}
+{{--                                        @if ($setting->is_faq == 1)--}}
+{{--                                        <a class="{{ request()->routeIs('front.faq*') ? 'active' : '' }}" href="{{route('front.faq')}}"><i class="icon-chevron-right pr-2"></i>{{__('Faq')}}</a>--}}
+{{--                                        @endif--}}
+{{--                                        @foreach (DB::table('pages')->wherePos(0)->orwhere('pos',2)->get() as $page)--}}
+{{--                                        <a class="{{request()->url() == route('front.page',$page->slug) ? 'active' : ''}} " href="{{route('front.page',$page->slug)}}"><i class="icon-chevron-right pr-2"></i>{{$page->title}}</a>--}}
+{{--                                        @endforeach--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
 
                               @if ($setting->is_contact == 1)
                                 <li class="{{ request()->routeIs('front.contact') ? 'active' : '' }}"><a href="{{route('front.contact')}}">{{__('Contact')}}</a></li>
@@ -367,73 +367,51 @@ body_theme4
 <footer class="site-footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <!-- Contact Info-->
-          <section class="widget widget-light-skin">
-            <h3 class="widget-title">{{__('Get In Touch')}}</h3>
-            <p class="mb-1"><strong>{{__('Address')}}: </strong> {{$setting->footer_address}}</p>
-            <p class="mb-1"><strong>{{__('Phone')}}: </strong> {{$setting->footer_phone}}</p>
-            <p class="mb-3"><strong>{{__('Email')}}: </strong> {{$setting->footer_email}}</p>
-            <ul class="list-unstyled text-sm">
-              <li><span class=""><strong>{{__('Monday-Friday')}}: </strong></span>{{$setting->friday_start}} - {{$setting->friday_end}}</li>
-              <li><span class=""><strong>{{__('Saturday')}}: </strong></span>{{$setting->satureday_start}} - {{$setting->satureday_end}}</li>
-            </ul>
-            @php
-            $links = json_decode($setting->social_link,true)['links'];
-            $icons = json_decode($setting->social_link,true)['icons'];
-
-          @endphp
-            <div class="footer-social-links">
-                @foreach ($links as $link_key => $link)
-                <a href="{{$link}}"><span><i class="{{$icons[$link_key]}}"></i></span></a>
-                @endforeach
-            </div>
-          </section>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <!-- Customer Info-->
-          <div class="widget widget-links widget-light-skin">
-            <h3 class="widget-title">{{__('Usefull Links')}}</h3>
-            <ul>
-                @if ($setting->is_faq == 1)
-                <li>
-                    <a class="" href="{{route('front.faq')}}">{{__('Faq')}}</a>
-                </li>
-                @endif
-                @foreach (DB::table('pages')->wherePos(2)->orwhere('pos',1)->get() as $page)
-                <li><a href="{{route('front.page',$page->slug)}}">{{$page->title}}</a></li>
-
-                @endforeach
-
-            </ul>
+          <div class="col-lg-4 col-md-6">
+              <!-- Contact Info - Head Office -->
+              <section class="widget widget-light-skin">
+                  <h3 class="widget-title">{{__('Head Office')}}</h3>
+                  <p class="mb-1"><strong>{{__('Branch')}}: </strong> Kaneshie Head Office</p>
+                  <p class="mb-1"><strong>{{__('Address')}}: </strong> KN 2467 - Kaneshie Pamprom, Adjacent Goil Filling Station</p>
+                  <p class="mb-1"><strong>{{__('Code')}}: </strong> GA-263-1132</p>
+                  <p class="mb-1"><strong>{{__('Phone')}}: </strong> 0240213609 / 0243356509</p>
+                  <p class="mb-1"><strong>{{__('Manager')}}: </strong> David Turkson - 0553609195</p>
+                  <p class="mb-3"><strong>{{__('Email')}}: </strong> stepstochristinfo@yahoo.com</p>
+              </section>
           </div>
-        </div>
-        <div class="col-lg-4">
-            <!-- Subscription-->
-            <section class="widget">
-              <h3 class="widget-title">{{__('Newsletter')}}</h3>
-              <form class="row subscriber-form" action="{{route('front.subscriber.submit')}}" method="post">
-                @csrf
-                <div class="col-sm-12">
-                  <div class="input-group">
-                    <input class="form-control" type="email" name="email" placeholder="{{__('Your e-mail')}}">
-                    <span class="input-group-addon"><i class="icon-mail"></i></span> </div>
-                  <div aria-hidden="true">
-                    <input type="hidden" name="b_c7103e2c981361a6639545bd5_1194bb7544" tabindex="-1">
-                  </div>
 
-                </div>
-                <div class="col-sm-12">
-                  <button class="btn btn-primary btn-block mt-2" type="submit">
-                      <span>{{__('Subscribe')}}</span>
-                  </button>
-                </div>
-                <div class="col-lg-12">
-                    <p class="text-sm opacity-80 pt-2">{{__('Subscribe to our Newsletter to receive early discount offers, latest news, sales and promo information.')}}</p>
-                </div>
-              </form>
-              <div class="pt-3"><img class="d-block gateway_image" src="{{ $setting->footer_gateway_img ? asset('assets/images/'.$setting->footer_gateway_img) : asset('system/resources/assets/images/placeholder.png') }}"></div>
-            </section>
+          <div class="col-lg-4 col-sm-6">
+              <!-- Contact Info - Accra Branches -->
+              <section class="widget widget-light-skin">
+                  <h3 class="widget-title">{{__('Accra Branches')}}</h3>
+                  <div class="mb-3">
+                      <p class="mb-1"><strong>{{__('Makola')}}: </strong> Inside Pomaa Plaza, Zongo Lane</p>
+                      <p class="mb-1"><strong>{{__('Code')}}: </strong> GA-182-0248</p>
+                      <p class="mb-1"><strong>{{__('Manager')}}: </strong> Philip Agyenim Boateng - 0242013057</p>
+                  </div>
+                  <div class="mb-3">
+                      <p class="mb-1"><strong>{{__('North Industrial Area')}}: </strong> Opposite Melcom Plus</p>
+                      <p class="mb-1"><strong>{{__('Code')}}: </strong> GA-131-7822</p>
+                      <p class="mb-1"><strong>{{__('Manager')}}: </strong> Enoch Danso - 0245109159</p>
+                  </div>
+              </section>
+          </div>
+
+          <div class="col-lg-4 col-sm-6">
+              <!-- Contact Info - Other Branches -->
+              <section class="widget widget-light-skin">
+                  <h3 class="widget-title">{{__('Other Locations')}}</h3>
+                  <div class="mb-3">
+                      <p class="mb-1"><strong>{{__('Kasoa')}}: </strong> High Tension, inside IPMC Building</p>
+                      <p class="mb-1"><strong>{{__('Code')}}: </strong> CX-000-1524</p>
+                      <p class="mb-1"><strong>{{__('Manager')}}: </strong> Stephen Abra-Sono - 0542914185</p>
+                  </div>
+                  <div class="mb-3">
+                      <p class="mb-1"><strong>{{__('Kumasi')}}: </strong> Shalom House, Dr. Mensah</p>
+                      <p class="mb-1"><strong>{{__('Code')}}: </strong> AK-006-3522</p>
+                      <p class="mb-1"><strong>{{__('Manager')}}: </strong> Daniel Tetteh - 0249428954</p>
+                  </div>
+              </section>
           </div>
       </div>
       <!-- Copyright-->

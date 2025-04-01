@@ -14,11 +14,11 @@
             $halfStar = "<i class = 'far fa-star-half filled'></i>";
             $emptyStar = "<i class = 'far fa-star'></i>";
             $rating = $rating <= $maxRating ? $rating : $maxRating;
-        
+
             $fullStarCount = (int) $rating;
             $halfStarCount = ceil($rating) - $fullStarCount;
             $emptyStarCount = $maxRating - $fullStarCount - $halfStarCount;
-        
+
             $html = str_repeat($fullStar, $fullStarCount);
             $html .= str_repeat($halfStar, $halfStarCount);
             $html .= str_repeat($emptyStar, $emptyStarCount);
@@ -167,38 +167,39 @@
                                                     <img class="lazy"
                                                         data-src="{{ asset('assets/images/' . $item->thumbnail) }}"
                                                         alt="Product">
-                                                    <div class="product-button-group"><a
-                                                            class="product-button wishlist_store"
-                                                            href="{{ route('user.wishlist.store', $item->id) }}"
-                                                            title="{{ __('Wishlist') }}"><i class="icon-heart"></i></a>
-                                                        <a data-target="{{ route('fornt.compare.product', $item->id) }}"
-                                                            class="product-button product_compare" href="javascript:;"
-                                                            title="{{ __('Compare') }}"><i class="icon-repeat"></i></a>
-                                                        @include('includes.item_footer', [
-                                                            'sitem' => $item,
-                                                        ])
-                                                    </div>
+{{--                                                    <div class="product-button-group"><a--}}
+{{--                                                            class="product-button wishlist_store"--}}
+{{--                                                            href="{{ route('user.wishlist.store', $item->id) }}"--}}
+{{--                                                            title="{{ __('Wishlist') }}"><i class="icon-heart"></i></a>--}}
+{{--                                                        <a data-target="{{ route('fornt.compare.product', $item->id) }}"--}}
+{{--                                                            class="product-button product_compare" href="javascript:;"--}}
+{{--                                                            title="{{ __('Compare') }}"><i class="icon-repeat"></i></a>--}}
+{{--                                                        @include('includes.item_footer', [--}}
+{{--                                                            'sitem' => $item,--}}
+{{--                                                        ])--}}
+{{--                                                    </div>--}}
                                                 </div>
+                                                <!-Theme 2-->
                                                 <div class="product-card-inner">
                                                     <div class="product-card-body">
 
-                                                        <div class="product-category"><a
-                                                                href="{{ route('front.catalog') . '?category=' . $item->category->slug }}">{{ $item->category->name }}</a>
+                                                        <div class="product-category">
+                                                               <a href="#">{{ $item->category->name }}</a>
                                                         </div>
                                                         <h3 class="product-title"><a
-                                                                href="{{ route('front.product', $item->slug) }}">
+                                                                href="#">
                                                                 {{ Str::limit($item->name, 50) }}
                                                             </a></h3>
-                                                        <div class="rating-stars">
-                                                            {!! renderStarRating($item->reviews->avg('rating')) !!}
-                                                        </div>
-                                                        <h4 class="product-price">
-                                                            @if ($item->previous_price != 0)
-                                                                <del>{{ PriceHelper::setPreviousPrice($item->previous_price) }}</del>
-                                                            @endif
+{{--                                                        <div class="rating-stars">--}}
+{{--                                                            {!! renderStarRating($item->reviews->avg('rating')) !!}--}}
+{{--                                                        </div>--}}
+{{--                                                        <h4 class="product-price">--}}
+{{--                                                            @if ($item->previous_price != 0)--}}
+{{--                                                                <del>{{ PriceHelper::setPreviousPrice($item->previous_price) }}</del>--}}
+{{--                                                            @endif--}}
 
-                                                            {{ PriceHelper::grandCurrencyPrice($item) }}
-                                                        </h4>
+{{--                                                            {{ PriceHelper::grandCurrencyPrice($item) }}--}}
+{{--                                                        </h4>--}}
                                                         @if (date('d-m-y') != \Carbon\Carbon::parse($item->date)->format('d-m-y'))
                                                             <div class="countdown countdown-alt mb-3"
                                                                 data-date-time="{{ $item->date }}">
@@ -253,33 +254,33 @@
                                                 <img class="lazy"
                                                     data-src="{{ asset('assets/images/' . $item->thumbnail) }}"
                                                     alt="Product">
-                                                <div class="product-button-group"><a class="product-button wishlist_store"
-                                                        href="{{ route('user.wishlist.store', $item->id) }}"
-                                                        title="{{ __('Wishlist') }}"><i class="icon-heart"></i></a>
-                                                    <a data-target="{{ route('fornt.compare.product', $item->id) }}"
-                                                        class="product-button product_compare" href="javascript:;"
-                                                        title="{{ __('Compare') }}"><i class="icon-repeat"></i></a>
-                                                    @include('includes.item_footer', ['sitem' => $item])
-                                                </div>
+{{--                                                <div class="product-button-group"><a class="product-button wishlist_store"--}}
+{{--                                                        href="{{ route('user.wishlist.store', $item->id) }}"--}}
+{{--                                                        title="{{ __('Wishlist') }}"><i class="icon-heart"></i></a>--}}
+{{--                                                    <a data-target="{{ route('fornt.compare.product', $item->id) }}"--}}
+{{--                                                        class="product-button product_compare" href="javascript:;"--}}
+{{--                                                        title="{{ __('Compare') }}"><i class="icon-repeat"></i></a>--}}
+{{--                                                    @include('includes.item_footer', ['sitem' => $item])--}}
+{{--                                                </div>--}}
                                             </div>
                                             <div class="product-card-inner">
                                                 <div class="product-card-body">
-                                                    <div class="product-category"><a
-                                                            href="{{ route('front.catalog') . '?category=' . $item->category->slug }}">{{ $item->category->name }}</a>
+                                                    <div class="product-category">
+                                                           <a href="#">{{ $item->category->name }}</a>
                                                     </div>
                                                     <h3 class="product-title"><a
-                                                            href="{{ route('front.product', $item->slug) }}">
+                                                            href="#">
                                                             {{ Str::limit($item->name, 35) }}
                                                         </a></h3>
-                                                    <div class="rating-stars">
-                                                        {!! renderStarRating($item->reviews->avg('rating')) !!}
-                                                    </div>
-                                                    <h4 class="product-price">
-                                                        @if ($item->previous_price != 0)
-                                                            <del>{{ PriceHelper::setPreviousPrice($item->previous_price) }}</del>
-                                                        @endif
-                                                        {{ PriceHelper::grandCurrencyPrice($item) }}
-                                                    </h4>
+{{--                                                    <div class="rating-stars">--}}
+{{--                                                        {!! renderStarRating($item->reviews->avg('rating')) !!}--}}
+{{--                                                    </div>--}}
+{{--                                                    <h4 class="product-price">--}}
+{{--                                                        @if ($item->previous_price != 0)--}}
+{{--                                                            <del>{{ PriceHelper::setPreviousPrice($item->previous_price) }}</del>--}}
+{{--                                                        @endif--}}
+{{--                                                        {{ PriceHelper::grandCurrencyPrice($item) }}--}}
+{{--                                                    </h4>--}}
                                                 </div>
 
                                             </div>
@@ -383,33 +384,33 @@
                                             <img class="lazy"
                                                 data-src="{{ asset('assets/images/' . $item->thumbnail) }}"
                                                 alt="Product">
-                                            <div class="product-button-group"><a class="product-button wishlist_store"
-                                                    href="{{ route('user.wishlist.store', $item->id) }}"
-                                                    title="{{ __('Wishlist') }}"><i class="icon-heart"></i></a>
-                                                <a data-target="{{ route('fornt.compare.product', $item->id) }}"
-                                                    class="product-button product_compare" href="javascript:;"
-                                                    title="{{ __('Compare') }}"><i class="icon-repeat"></i></a>
-                                                @include('includes.item_footer', ['sitem' => $item])
-                                            </div>
+{{--                                            <div class="product-button-group"><a class="product-button wishlist_store"--}}
+{{--                                                    href="{{ route('user.wishlist.store', $item->id) }}"--}}
+{{--                                                    title="{{ __('Wishlist') }}"><i class="icon-heart"></i></a>--}}
+{{--                                                <a data-target="{{ route('fornt.compare.product', $item->id) }}"--}}
+{{--                                                    class="product-button product_compare" href="javascript:;"--}}
+{{--                                                    title="{{ __('Compare') }}"><i class="icon-repeat"></i></a>--}}
+{{--                                                @include('includes.item_footer', ['sitem' => $item])--}}
+{{--                                            </div>--}}
                                         </div>
                                         <div class="product-card-inner">
                                             <div class="product-card-body">
-                                                <div class="product-category"><a
-                                                        href="{{ route('front.catalog') . '?category=' . $item->category->slug }}">{{ $item->category->name }}</a>
+                                                <div class="product-category">
+                                                       <a href="#">{{ $item->category->name }}</a>
                                                 </div>
                                                 <h3 class="product-title"><a
-                                                        href="{{ route('front.product', $item->slug) }}">
+                                                        href="#">
                                                         {{ Str::limit($item->name, 35) }}
                                                     </a></h3>
-                                                <div class="rating-stars">
-                                                    {!! renderStarRating($item->reviews->avg('rating')) !!}
-                                                </div>
-                                                <h4 class="product-price">
-                                                    @if ($item->previous_price != 0)
-                                                        <del>{{ PriceHelper::setPreviousPrice($item->previous_price) }}</del>
-                                                    @endif
-                                                    {{ PriceHelper::grandCurrencyPrice($item) }}
-                                                </h4>
+{{--                                                <div class="rating-stars">--}}
+{{--                                                    {!! renderStarRating($item->reviews->avg('rating')) !!}--}}
+{{--                                                </div>--}}
+{{--                                                <h4 class="product-price">--}}
+{{--                                                    @if ($item->previous_price != 0)--}}
+{{--                                                        <del>{{ PriceHelper::setPreviousPrice($item->previous_price) }}</del>--}}
+{{--                                                    @endif--}}
+{{--                                                    {{ PriceHelper::grandCurrencyPrice($item) }}--}}
+{{--                                                </h4>--}}
                                             </div>
 
                                         </div>
@@ -456,34 +457,34 @@
                                             <img class="lazy"
                                                 data-src="{{ asset('assets/images/' . $item->thumbnail) }}"
                                                 alt="Product">
-                                            <div class="product-button-group"><a class="product-button wishlist_store"
-                                                    href="{{ route('user.wishlist.store', $item->id) }}"
-                                                    title="{{ __('Wishlist') }}"><i class="icon-heart"></i></a>
-                                                <a data-target="{{ route('fornt.compare.product', $item->id) }}"
-                                                    class="product-button product_compare" href="javascript:;"
-                                                    title="{{ __('Compare') }}"><i class="icon-repeat"></i></a>
-                                                @include('includes.item_footer', ['sitem' => $item])
-                                            </div>
+{{--                                            <div class="product-button-group"><a class="product-button wishlist_store"--}}
+{{--                                                    href="{{ route('user.wishlist.store', $item->id) }}"--}}
+{{--                                                    title="{{ __('Wishlist') }}"><i class="icon-heart"></i></a>--}}
+{{--                                                <a data-target="{{ route('fornt.compare.product', $item->id) }}"--}}
+{{--                                                    class="product-button product_compare" href="javascript:;"--}}
+{{--                                                    title="{{ __('Compare') }}"><i class="icon-repeat"></i></a>--}}
+{{--                                                @include('includes.item_footer', ['sitem' => $item])--}}
+{{--                                            </div>--}}
 
                                         </div>
                                         <div class="product-card-inner">
                                             <div class="product-card-body">
-                                                <div class="product-category"><a
-                                                        href="{{ route('front.catalog') . '?category=' . $item->category->slug }}">{{ $item->category->name }}</a>
+                                                <div class="product-category">
+                                                        <a href="#">{{ $item->category->name }}</a>
                                                 </div>
                                                 <h3 class="product-title"><a
-                                                        href="{{ route('front.product', $item->slug) }}">
+                                                        href="#">
                                                         {{ Str::limit($item->name, 35) }}
                                                     </a></h3>
-                                                <div class="rating-stars">
-                                                    {!! renderStarRating($item->reviews->avg('rating')) !!}
-                                                </div>
-                                                <h4 class="product-price">
-                                                    @if ($item->previous_price != 0)
-                                                        <del>{{ PriceHelper::setPreviousPrice($item->previous_price) }}</del>
-                                                    @endif
-                                                    {{ PriceHelper::grandCurrencyPrice($item) }}
-                                                </h4>
+{{--                                                <div class="rating-stars">--}}
+{{--                                                    {!! renderStarRating($item->reviews->avg('rating')) !!}--}}
+{{--                                                </div>--}}
+{{--                                                <h4 class="product-price">--}}
+{{--                                                    @if ($item->previous_price != 0)--}}
+{{--                                                        <del>{{ PriceHelper::setPreviousPrice($item->previous_price) }}</del>--}}
+{{--                                                    @endif--}}
+{{--                                                    {{ PriceHelper::grandCurrencyPrice($item) }}--}}
+{{--                                                </h4>--}}
                                             </div>
                                         </div>
                                     </div>
@@ -530,33 +531,33 @@
                                             <img class="lazy"
                                                 data-src="{{ asset('assets/images/' . $item->thumbnail) }}"
                                                 alt="Product">
-                                            <div class="product-button-group"><a class="product-button wishlist_store"
-                                                    href="{{ route('user.wishlist.store', $item->id) }}"
-                                                    title="{{ __('Wishlist') }}"><i class="icon-heart"></i></a>
-                                                <a data-target="{{ route('fornt.compare.product', $item->id) }}"
-                                                    class="product-button product_compare" href="javascript:;"
-                                                    title="{{ __('Compare') }}"><i class="icon-repeat"></i></a>
-                                                @include('includes.item_footer', ['sitem' => $item])
-                                            </div>
+{{--                                            <div class="product-button-group"><a class="product-button wishlist_store"--}}
+{{--                                                    href="{{ route('user.wishlist.store', $item->id) }}"--}}
+{{--                                                    title="{{ __('Wishlist') }}"><i class="icon-heart"></i></a>--}}
+{{--                                                <a data-target="{{ route('fornt.compare.product', $item->id) }}"--}}
+{{--                                                    class="product-button product_compare" href="javascript:;"--}}
+{{--                                                    title="{{ __('Compare') }}"><i class="icon-repeat"></i></a>--}}
+{{--                                                @include('includes.item_footer', ['sitem' => $item])--}}
+{{--                                            </div>--}}
                                         </div>
                                         <div class="product-card-inner">
                                             <div class="product-card-body">
-                                                <div class="product-category"><a
-                                                        href="{{ route('front.catalog') . '?category=' . $item->category->slug }}">{{ $item->category->name }}</a>
+                                                <div class="product-category">
+                                                        <a href="#">{{ $item->category->name }}</a>
                                                 </div>
                                                 <h3 class="product-title"><a
-                                                        href="{{ route('front.product', $item->slug) }}">
+                                                        href="#">
                                                         {{ Str::limit($item->name, 35) }}
                                                     </a></h3>
-                                                <div class="rating-stars">
-                                                    {!! renderStarRating($item->reviews->avg('rating')) !!}
-                                                </div>
-                                                <h4 class="product-price">
-                                                    @if ($item->previous_price != 0)
-                                                        <del>{{ PriceHelper::setPreviousPrice($item->previous_price) }}</del>
-                                                    @endif
-                                                    {{ PriceHelper::grandCurrencyPrice($item) }}
-                                                </h4>
+{{--                                                <div class="rating-stars">--}}
+{{--                                                    {!! renderStarRating($item->reviews->avg('rating')) !!}--}}
+{{--                                                </div>--}}
+{{--                                                <h4 class="product-price">--}}
+{{--                                                    @if ($item->previous_price != 0)--}}
+{{--                                                        <del>{{ PriceHelper::setPreviousPrice($item->previous_price) }}</del>--}}
+{{--                                                    @endif--}}
+{{--                                                    {{ PriceHelper::grandCurrencyPrice($item) }}--}}
+{{--                                                </h4>--}}
                                             </div>
                                         </div>
                                     </div>
@@ -641,15 +642,15 @@
                                                             href="{{ route('front.product', $two_column_category_item->slug) }}">
                                                             {{ Str::limit($two_column_category_item->name, 40) }}
                                                         </a></h3>
-                                                    <div class="rating-stars">
-                                                        {!! renderStarRating($two_column_category_item->reviews->avg('rating')) !!}
-                                                    </div>
-                                                    <h4 class="product-price">
-                                                        @if ($two_column_category_item->previous_price != 0)
-                                                            <del>{{ PriceHelper::setPreviousPrice($two_column_category_item->previous_price) }}</del>
-                                                        @endif
-                                                        {{ PriceHelper::grandCurrencyPrice($two_column_category_item) }}
-                                                    </h4>
+{{--                                                    <div class="rating-stars">--}}
+{{--                                                        {!! renderStarRating($two_column_category_item->reviews->avg('rating')) !!}--}}
+{{--                                                    </div>--}}
+{{--                                                    <h4 class="product-price">--}}
+{{--                                                        @if ($two_column_category_item->previous_price != 0)--}}
+{{--                                                            <del>{{ PriceHelper::setPreviousPrice($two_column_category_item->previous_price) }}</del>--}}
+{{--                                                        @endif--}}
+{{--                                                        {{ PriceHelper::grandCurrencyPrice($two_column_category_item) }}--}}
+{{--                                                    </h4>--}}
                                                 </div>
                                             </div>
                                         @endforeach

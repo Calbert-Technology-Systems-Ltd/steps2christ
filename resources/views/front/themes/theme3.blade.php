@@ -419,6 +419,7 @@
                     <div class="section-title">
                         <h2 class="h3">{{ $two_column_category['name']->name }}</h2>
                     </div>
+                    <!-Theme 3-->
                     <div class="main-content">
                         <div class="newproduct-slider owl-carousel">
                             @foreach ($two_column_categoriess[$two_column_key]['items']->chunk(4) as $two_column_category_itemt)

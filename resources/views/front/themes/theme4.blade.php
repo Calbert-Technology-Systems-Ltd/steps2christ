@@ -231,6 +231,7 @@
                                                     @include('includes.item_footer',['sitem' => $item])
                                                 </div>
                                             </div>
+                                            <!-Theme 4-->
                                             <div class="product-card-inner">
                                                 <div class="product-card-body">
 

@@ -163,22 +163,23 @@
                                         @endif
                                     </div>
                                 </div>
+                                <!-Theme 1-->
                                     <div class="product-card-body">
 
                                         <div class="product-category"><a href="{{route('front.catalog').'?category='.$compaign_item->item->category->slug}}">{{$compaign_item->item->category->name}}</a></div>
                                         <h3 class="product-title"><a href="{{route('front.product',$compaign_item->item->slug)}}">
                                             {{ Str::limit($compaign_item->item->name, 35) }}
                                         </a></h3>
-                                        <div class="rating-stars">
-                                            {!! renderStarRating($compaign_item->item->reviews->avg('rating')) !!}
-                                        </div>
-                                        <h4 class="product-price">
-                                        @if ($compaign_item->item->previous_price != 0)
-                                            <del>{{PriceHelper::setPreviousPrice($compaign_item->item->previous_price)}}</del>
-                                        @endif
+{{--                                        <div class="rating-stars">--}}
+{{--                                            {!! renderStarRating($compaign_item->item->reviews->avg('rating')) !!}--}}
+{{--                                        </div>--}}
+{{--                                        <h4 class="product-price">--}}
+{{--                                        @if ($compaign_item->item->previous_price != 0)--}}
+{{--                                            <del>{{PriceHelper::setPreviousPrice($compaign_item->item->previous_price)}}</del>--}}
+{{--                                        @endif--}}
 
-                                        {{PriceHelper::grandCurrencyPrice($compaign_item->item)}}
-                                        </h4>
+{{--                                        {{PriceHelper::grandCurrencyPrice($compaign_item->item)}}--}}
+{{--                                        </h4>--}}
 
                                     </div>
 
@@ -402,6 +403,7 @@
                                                     @include('includes.item_footer',['sitem' => $item])
                                                 </div>
                                             </div>
+                                            <!-Theme 1-->
                                             <div class="product-card-inner">
                                             <div class="product-card-body">
                                                 <div class="product-category"><a href="{{route('front.catalog').'?category='.$item->category->slug}}">{{$item->category->name}}</a></div>

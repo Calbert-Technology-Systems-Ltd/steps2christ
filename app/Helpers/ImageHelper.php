@@ -37,60 +37,72 @@ class ImageHelper
 
 
 
-    public static function ItemhandleUploadedImage($file,$path,$delete=null) {
+    public static function ItemhandleUploadedImage($file, $path, $delete = null) {
         if ($file) {
-            if($delete){
-                if (file_exists(base_path('../').$path.'/'.$delete)) {
-                    unlink(base_path('../').$path.'/'.$delete);
+            if ($delete) {
+                if (file_exists(public_path($path . '/' . $delete))) {
+                    unlink(public_path($path . '/' . $delete));
                 }
             }
 
-            $thum = Str::random(8).'.'.$file->getClientOriginalExtension();
-            $image = \Image::make($file)->resize(230,230);
-    
-            $image->save(base_path('../').$path.'/'.$thum);
-    
-            $photo = time().$file->getClientOriginalName();
-            $file->move($path,$photo);
-            return [$photo,$thum];
+            $thum = Str::random(8) . '.' . $file->getClientOriginalExtension();
+            $image = \Image::make($file)->resize(230, 230);
+            $image->save(public_path($path . '/' . $thum));
+
+            $photo = time() . $file->getClientOriginalName();
+            $file->move(public_path($path), $photo);
+            return [$photo, $thum];
         }
     }
 
-    public static function handleUpdatedUploadedImage($file,$path,$data,$delete_path,$field) {
-        $name = time().$file->getClientOriginalName();
-   
-        $file->move(base_path('..').$path,$name);
-        if($data[$field] != null){
-            if (file_exists(base_path('../').$delete_path.$data[$field])) {
-                unlink(base_path('../').$delete_path.$data[$field]);
+
+    public static function handleUpdatedUploadedImage($file, $path, $data, $delete_path, $field) {
+        // Generate a unique name for the file
+        $name = time() . $file->getClientOriginalName();
+
+        // Move the new file to the public path
+        $file->move(public_path($path), $name);
+
+        // Check if there is an old file to delete
+        if (!empty($data[$field])) {
+            // Ensure the delete path has a trailing slash
+            $deleteDirectory = rtrim($delete_path, '/') . '/';
+
+            if (file_exists(public_path($deleteDirectory . $data[$field]))) {
+                unlink(public_path($deleteDirectory . $data[$field]));
             }
         }
+
         return $name;
     }
 
 
-    public static function ItemhandleUpdatedUploadedImage($file,$path,$data,$delete_path,$field) {
-        $photo = time().$file->getClientOriginalName();
-        $thum = Str::random(8).'.'.$file->getClientOriginalExtension();
-      
-        $image = \Image::make($file)->resize(230,230);
 
-        $image->save(base_path('..').$path.'/'.$thum);
+    public static function ItemhandleUpdatedUploadedImage($file, $path, $data, $delete_path, $field) {
+        // Generate file names
+        $photo = time() . $file->getClientOriginalName();
+        $thum = Str::random(8) . '.' . $file->getClientOriginalExtension();
 
-        $file->move(base_path('..').$path,$photo);
+        // Resize and save the thumbnail using the public_path
+        $image = \Image::make($file)->resize(230, 230);
+        $image->save(public_path($path . '/' . $thum));
 
-        if($data['thumbnail'] != null){
-            if (file_exists(base_path('../').$delete_path.$data['thumbnail'])) {
-                unlink(base_path('../').$delete_path.$data['thumbnail']);
-            }
+        // Move the original file using the public_path
+        $file->move(public_path($path), $photo);
+
+        // Remove old thumbnail if it exists and the filename is not null
+        if (!empty($data['thumbnail']) && file_exists(public_path($delete_path . $data['thumbnail']))) {
+            unlink(public_path($delete_path . $data['thumbnail']));
         }
-        if($data[$field] != null){
-            if (file_exists(base_path('../').$delete_path.$data[$field])) {
-                unlink(base_path('../').$delete_path.$data[$field]);
-            }
+
+        // Remove old image file for the given field if it exists and is not null
+        if (!empty($data[$field]) && file_exists(public_path($delete_path . $data[$field]))) {
+            unlink(public_path($delete_path . $data[$field]));
         }
-        return [$photo,$thum];
+
+        return [$photo, $thum];
     }
+
 
 
     public static function handleDeletedImage($data,$field,$delete_path) {

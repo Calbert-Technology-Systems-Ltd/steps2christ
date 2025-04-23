@@ -30,35 +30,59 @@
       <div class="col-lg-4 col-md-5 col-sm-5 order-lg-1 order-md-2 order-sm-2">
 
         <!-- Widget Contacts-->
-        <section class="widget widget-featured-posts card rounded p-4 ">
-          <h3 class="widget-title padding-bottom-1x">{{__('Working Days')}}</h3>
-          <ul class="list-unstyled text-sm">
-            <li><span class="text-muted">{{__('Monday-Friday')}}:</span>{{$setting->friday_start}} - {{$setting->friday_end}}</li>
-            <li><span class="text-muted">{{__('Saturday')}}:</span>{{$setting->satureday_start}} - {{$setting->satureday_end}}</li>
-          </ul>
-          
-        </section>
-        <!-- Widget Address-->
-        <section class="widget widget-featured-posts card rounded p-4">
-          <h3 class="widget-title padding-bottom-1x">{{__('Store address')}}</h3>
-          <p>{{__('Our address information')}}</p>
-          <ul class="list-icon margin-bottom-1x">
-            <li> <i class="icon-map-pin text-muted"></i>{{$setting->footer_address}}</li>
-            <li> <i class="icon-phone text-muted"></i>{{$setting->footer_phone}}</li>
-          </ul>
+          <!-- Widget Contact Us -->
+          <section class="widget widget-featured-posts card rounded p-4">
+              <h3 class="widget-title padding-bottom-1x">{{__('Contact Us')}}</h3>
 
-          @php
-          $links = json_decode($setting->social_link,true)['links'];
-          $icons = json_decode($setting->social_link,true)['icons'];
+              <h5 class="mt-3 text-uppercase">Kaneshie Head Office</h5>
+              <ul class="list-icon margin-bottom-1x">
+                  <li><i class="icon-map-pin text-muted"></i> KN 2467 - Kaneshie Pamprom, Adjacent Goil Filling Station</li>
+                  <li><i class="icon-phone text-muted"></i> 0240213609 / 0243356509</li>
+                  <li><i class="icon-user text-muted"></i> Manager: David Turkson - 0553609195</li>
+                  <li><i class="icon-mail text-muted"></i> stepstochristinfo@yahoo.com</li>
+                  <li><i class="icon-map-pin text-muted"></i> Code: GA-263-1132</li>
+              </ul>
 
-          @endphp
+              <h5 class="mt-3 text-uppercase">Accra Branches</h5>
+              <strong>Makola</strong>
+              <ul class="list-icon margin-bottom-1x">
+                  <li><i class="icon-map-pin text-muted"></i> Inside Pomaa Plaza, Zongo Lane</li>
+                  <li><i class="icon-user text-muted"></i> Manager: Philip Agyenim Boateng - 0242013057</li>
+                  <li><i class="icon-map-pin text-muted"></i> Code: GA-182-0248</li>
+              </ul>
+              <strong>North Industrial Area</strong>
+              <ul class="list-icon margin-bottom-1x">
+                  <li><i class="icon-map-pin text-muted"></i> Opposite Melcom Plus</li>
+                  <li><i class="icon-user text-muted"></i> Manager: Enoch Danso - 0245109159</li>
+                  <li><i class="icon-map-pin text-muted"></i> Code: GA-131-7822</li>
+              </ul>
 
-          <div>
-            @foreach ($links as $link_key => $link)
-            <a class="social-button shape-circle sb-facebook" href="{{$link}}" data-toggle="tooltip" data-placement="top"><i class="{{$icons[$link_key]}}"></i></a>
-            @endforeach
-          </div>
-        </section>
+              <h5 class="mt-3 text-uppercase">Other Locations</h5>
+              <strong>Kasoa</strong>
+              <ul class="list-icon margin-bottom-1x">
+                  <li><i class="icon-map-pin text-muted"></i> High Tension, inside IPMC Building</li>
+                  <li><i class="icon-map-pin text-muted"></i> Code: CX-000-1524</li>
+              </ul>
+              <strong>Kumasi</strong>
+              <ul class="list-icon margin-bottom-1x">
+                  <li><i class="icon-map-pin text-muted"></i> Shalom House, Dr. Mensah</li>
+                  <li><i class="icon-user text-muted"></i> Manager: Daniel Tetteh - 0249428954</li>
+                  <li><i class="icon-map-pin text-muted"></i> Code: AK-006-3522</li>
+              </ul>
+
+              <strong>General Manager</strong>
+              <ul class="list-icon">
+                  <li><i class="icon-user text-muted"></i> Stephen Abra-Sono - 0542914185</li>
+              </ul>
+          </section>
+          <section class="widget widget-featured-posts card rounded p-4 ">
+              <h3 class="widget-title padding-bottom-1x">{{__('Working Days')}}</h3>
+              <ul class="list-unstyled text-sm">
+                  <li><span class="text-muted">Monday to Thursday:</span> 7 a.m. - 5:30 p.m.</li>
+                  <li><span class="text-muted">Friday:</span> 7 a.m. - 4:30 p.m.</li>
+              </ul>
+          </section>
+
       </div>
 
       <div class="col-lg-8 col-md-7 col-sm-7 order-lg-2 order-md-1 order-sm-1">

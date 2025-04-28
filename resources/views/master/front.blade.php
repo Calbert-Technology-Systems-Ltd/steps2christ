@@ -164,7 +164,7 @@ body_theme4
                             <span class="d-block d-lg-none close-m-serch"><i class="icon-x"></i></span>
                         </div>
                         <!-- Toolbar-->
-{{--                        <div class="toolbar d-flex">--}}
+                        <div class="toolbar d-flex">
 
 {{--                        <div class="toolbar-item close-m-serch visible-on-mobile"><a href="#">--}}
 {{--                            <div>--}}
@@ -172,10 +172,10 @@ body_theme4
 {{--                            </div>--}}
 {{--                            </a>--}}
 {{--                        </div>--}}
-{{--                        <div class="toolbar-item visible-on-mobile mobile-menu-toggle"><a href="#">--}}
-{{--                            <div><i class="icon-menu"></i><span class="text-label">{{__('Menu')}}</span></div>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
+                        <div class="toolbar-item visible-on-mobile mobile-menu-toggle"><a href="#">
+                            <div><i class="icon-menu"></i><span class="text-label">{{__('Menu')}}</span></div>
+                            </a>
+                        </div>
 
 {{--                        <div class="toolbar-item hidden-on-mobile"><a href="{{route('fornt.compare.index')}}">--}}
 {{--                            <div><span class="compare-icon"><i class="icon-repeat"></i><span class="count-label compare_count">{{Session::has('compare') ? count(Session::get('compare')) : '0'}}</span></span><span class="text-label">{{ __('Compare') }}</span></div>--}}
@@ -199,7 +199,7 @@ body_theme4
 {{--                            @include('includes.header_cart')--}}
 {{--                            </div>--}}
 {{--                        </div>--}}
-{{--                        </div>--}}
+                        </div>
 
                         <!-- Mobile Menu-->
                         <div class="mobile-menu">
@@ -239,17 +239,17 @@ body_theme4
                                             @if ($setting->is_blog == 1)
                                             <li class="{{ request()->routeIs('front.blog*') ? 'active' : '' }}"><a href="{{route('front.blog')}}"><i class="icon-chevron-right"></i>{{__('Blog')}}</a></li>
                                             @endif
-                                            <li class="t-h-dropdown">
-                                                <a class="" href="#"><i class="icon-chevron-right"></i>{{__('Pages')}} <i class="icon-chevron-down"></i></a>
-                                                <div class="t-h-dropdown-menu">
-                                                    @if ($setting->is_faq == 1)
-                                                    <a class="{{ request()->routeIs('front.faq*') ? 'active' : '' }}" href="{{route('front.faq')}}"><i class="icon-chevron-right pr-2"></i>{{__('Faq')}}</a>
-                                                    @endif
-                                                    @foreach (DB::table('pages')->wherePos(0)->orwhere('pos',2)->get() as $page)
-                                                    <a class="{{request()->url() == route('front.page',$page->slug) ? 'active' : ''}} " href="{{route('front.page',$page->slug)}}"><i class="icon-chevron-right pr-2"></i>{{$page->title}}</a>
-                                                    @endforeach
-                                                </div>
-                                            </li>
+{{--                                            <li class="t-h-dropdown">--}}
+{{--                                                <a class="" href="#"><i class="icon-chevron-right"></i>{{__('Pages')}} <i class="icon-chevron-down"></i></a>--}}
+{{--                                                <div class="t-h-dropdown-menu">--}}
+{{--                                                    @if ($setting->is_faq == 1)--}}
+{{--                                                    <a class="{{ request()->routeIs('front.faq*') ? 'active' : '' }}" href="{{route('front.faq')}}"><i class="icon-chevron-right pr-2"></i>{{__('Faq')}}</a>--}}
+{{--                                                    @endif--}}
+{{--                                                    @foreach (DB::table('pages')->wherePos(0)->orwhere('pos',2)->get() as $page)--}}
+{{--                                                    <a class="{{request()->url() == route('front.page',$page->slug) ? 'active' : ''}} " href="{{route('front.page',$page->slug)}}"><i class="icon-chevron-right pr-2"></i>{{$page->title}}</a>--}}
+{{--                                                    @endforeach--}}
+{{--                                                </div>--}}
+{{--                                            </li>--}}
 
                                         @if ($setting->is_contact == 1)
                                             <li class="{{ request()->routeIs('front.contact') ? 'active' : '' }}"><a href="{{route('front.contact')}}"><i class="icon-chevron-right"></i>{{__('Contact')}}</a></li>
